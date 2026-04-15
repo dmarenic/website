@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominik Marenić | Portfolio & CV</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">DM<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Početna</a></li>
+                <li><a href="#cv">Životopis</a></li>
+                <li><a href="#skills">Vještine</a></li>
+                <li><a href="#gallery">Galerija</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300" 
+                     data-full="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=100&w=1200" 
+                     alt="Dominik Marenić" id="profile-img">
+            </div>
+            <div class="hero-text">
+                <h1>Dominik Marenić</h1>
+                <p class="subtitle">Student Računarstva na FERIT-u | Tech Entuzijast</p>
+                <div class="cta-group">
+                    <a href="#cv" class="btn btn-primary">Pogledaj moj CV</a>
+                    <a href="#contact" class="btn btn-secondary">Kontaktiraj me</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="cv" class="section">
+        <div class="container">
+            <h2 class="section-title">Životopis</h2>
+            
+            <div class="cv-personal-info card">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-user"></i>
+                        <div>
+                            <span>Datum i mjesto rođenja</span>
+                            <p>17.11.2004., Pakrac</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-home"></i>
+                        <div>
+                            <span>Prebivalište</span>
+                            <p>Kralja Zvonimira 83, Novska</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <span>Boravište</span>
+                            <p>Vukovarska 126 C, Osijek</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-gamepad"></i>
+                        <div>
+                            <span>Interesi</span>
+                            <p>Gym, tekme, serije, coding</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-wrapper">
+                <div class="cv-column">
+                    <h3 class="cv-subtitle"><i class="fas fa-graduation-cap"></i> Obrazovanje</h3>
+                    <div class="timeline">
+                        <div class="timeline-item active">
+                            <h4>FERIT Osijek</h4>
+                            <p class="date">2023. - Danas</p>
+                            <p>Stručni studij računarstva. Fokus na praktičnim vještinama programiranja i mrežnih tehnologija.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Tehnička škola Kutina</h4>
+                            <p class="date">2019. - 2023.</p>
+                            <p>Smjer: Računalni tehničar za strojarstvo / Računarstvo.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Osnovna škola Novska</h4>
+                            <p class="date">2011. - 2019.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-column">
+                    <h3 class="cv-subtitle"><i class="fas fa-briefcase"></i> Radno iskustvo</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Rad na obiteljskom OPG-u</h4>
+                            <p class="date">Sezonski</p>
+                            <p>Upravljanje resursima, organizacija rada i fizički poslovi na gospodarstvu.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Uslužne djelatnosti (Konobar)</h4>
+                            <p class="date">Sezonski rad</p>
+                            <p>Rad u dinamičnom okruženju, izravna komunikacija s gostima i timski rad.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Član biračkog odbora</h4>
+                            <p class="date">2024.</p>
+                            <p>Provedba i nadzor izbornog procesa, rad s povjerljivom dokumentacijom.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Vještine</h2>
+            <div class="skills-wrapper">
+                <div class="skill-category">
+                    <h3>Tehničke vještine</h3>
+                    <div class="skill-item">
+                        <span>C / C++ (Fakultet)</span>
+                        <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>HTML/CSS</span>
+                        <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Osnove baza podataka</span>
+                        <div class="progress-bar"><div class="progress" style="width: 50%;"></div></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Osobne vještine</h3>
+                    <ul class="soft-skills-list">
+                        <li><i class="fas fa-check-circle"></i> Izrazita radna etika</li>
+                        <li><i class="fas fa-check-circle"></i> Timski igrač</li>
+                        <li><i class="fas fa-check-circle"></i> Visoka prilagodljivost</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Kontakt</h2>
+            <form class="contact-form card">
+                <input type="text" placeholder="Vaše ime" required>
+                <input type="email" placeholder="Email adresa" required>
+                <textarea placeholder="Vaša poruka..." rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary">Pošalji poruku</button>
+            </form>
+        </div>
+    </section>
+ 
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Dominik Marenić | FERIT Osijek</p>
+        </div>
+    </footer>
+    <script src="home.js"></script>
+</body>
+</html>
