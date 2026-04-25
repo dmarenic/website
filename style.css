@@ -1,0 +1,745 @@
+/* ==========================================================================
+   1. KORIJENSKE VARIJABLE I RESET
+   ========================================================================== */
+
+:root {
+    /* Deep Sea paleta */
+    --primary: #415a77;      
+    --secondary: #778da9;    
+    --dark: #0d1b2a;         
+    --navy: #1b263b;         
+    --light: #e0e1dd;        
+    --card-bg: #ffffff;
+    --links: #84a98c;
+    --background: #edf2fb;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--background);
+}
+
+/* ==========================================================================
+   2. REUSABLE KOMPONENTE (Layout, Tipke, Naslovi)
+   ========================================================================== */
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 6rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3.5rem;
+    font-weight: 800;
+}
+
+.bg-light {
+    background-color: #f8fafc;
+}
+
+.card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+/* Tipke */
+.btn {
+    padding: 0.9rem 2.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--links);
+    color: white;
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.08);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    margin-left: 1rem;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background: var(--primary);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   3. NAVIGACIJA (Navbar & Dropdown)
+   ========================================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.logo span {
+    color: var(--links);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    margin-left: 2rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 2rem;
+}
+
+.dropbtn {
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 1;
+    top: 100%;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: var(--dark);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin-left: 0 !important;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--light);
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light);
+    color: var(--primary);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   4. HERO SEKCIJA & PROFILE ZOOM
+   ========================================================================== */
+
+.hero {
+    padding: 8rem 0 6rem;
+    background: radial-gradient(circle at top right, var(--navy), var(--dark));
+    color: white;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    margin-bottom: 2rem;
+}
+
+/* CSS Profile Zoom Logic */
+#zoom-check {
+    display: none;
+}
+
+.zoom-label {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.hero-image img#profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 40px;
+    border: 3px solid var(--primary);
+    margin-bottom: 2rem;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease;
+}
+
+.hero-image img#profile-img:hover {
+    transform: scale(1.05);
+}
+
+#zoom-check:checked ~ .zoom-label img#profile-img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.8);
+    width: auto;
+    max-width: 80vw;
+    height: auto;
+    max-height: 70vh;
+    z-index: 9999;
+    border-radius: 20px;
+    box-shadow: 0 0 80px rgba(0,0,0,0.9);
+}
+
+#zoom-check:checked ~ .zoom-label::before {
+    content: "";
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background: rgba(0,0,0,0.75);
+    z-index: 9998;
+}
+
+/* ==========================================================================
+   5. ŽIVOTOPIS (CV) SEKCIJA
+   ========================================================================== */
+
+#cv a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+#cv a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.cv-personal-info {
+    margin-bottom: 3rem;
+}
+
+.cv-personal-info.card { 
+    margin-top: 40px; 
+    margin-bottom: 3rem;  
+}
+
+.info-title { 
+    margin-bottom: 20px; 
+    text-align: center; 
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    background: #f1f5f9;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.info-item span {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+}
+
+.info-item p {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--dark);
+}
+
+.cv-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.cv-subtitle {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+}
+
+.cv-subtitle i {
+    color: var(--primary);
+}
+
+/* Timeline stilovi */
+.timeline {
+    border-left: 2px solid var(--secondary);
+    padding-left: 2rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: calc(-2rem - 7px);
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--secondary);
+    border: 2px solid white;
+}
+
+.timeline-item.active::before {
+    background: var(--primary);
+    box-shadow: 0 0 0 4px rgba(65, 90, 119, 0.2);
+}
+
+.date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+/* Skills */
+.skill-item {
+    margin-bottom: 1.8rem;
+}
+
+.progress-bar {
+    background: var(--light);
+    height: 8px;
+    border-radius: 10px;
+    margin-top: 0.6rem;
+}
+
+.progress {
+    background: var(--primary);
+    height: 100%;
+    border-radius: 10px;
+}
+
+.progress.p-70 { width: 70%; }
+.progress.p-65 { width: 65%; }
+
+.soft-skills-list {
+    list-style: none;
+}
+
+.soft-skills-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+.soft-skills-list i {
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   6. HOBIJI & MULTIMEDIJA
+   ========================================================================== */
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.hobby-card { 
+    text-align: center; 
+}
+
+.hobby-card h3 { 
+    margin-bottom: 1rem; 
+}
+
+.img-wrapper { 
+    position: relative; 
+    width: 100%; 
+    border-radius: 15px; 
+    overflow: hidden; 
+}
+
+.format-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(65, 90, 119, 0.9);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    z-index: 10;
+}
+
+.hobby-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    object-position: 50% 25%;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.hobby-img:hover {
+    transform: scale(1.03);
+}
+
+/* Hobby Zoom & Overlays */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.8);
+    z-index: 9998;
+    cursor: zoom-out;
+}
+
+.overlay.active { 
+    display: block; 
+}
+
+.hobby-img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.3);
+    z-index: 9999;
+    max-width: 85vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    box-shadow: 0 0 80px rgba(0,0,0,0.9);
+    border-radius: 20px;
+    cursor: zoom-out;
+}
+
+/* Video */
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.video-caption {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Audio Player */
+.audio-player-card {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 2.5rem !important;
+}
+
+.audio-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.audio-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--light);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.audio-text h3 { margin-bottom: 0.3rem; font-size: 1.3rem; font-weight: 700; }
+.audio-text p { color: var(--secondary); font-size: 0.95rem; }
+
+.audio-controls-wrapper {
+    background: var(--light);
+    padding: 1.2rem;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--secondary);
+}
+
+.audio-controls-wrapper audio { 
+    width: 100%; 
+    height: 40px; 
+}
+
+/* ==========================================================================
+   7. STUDENTI SEKCIJA
+   ========================================================================== */
+
+.student-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.student-card {
+    text-align: center;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.student-card:hover { 
+    transform: translateY(-10px); 
+}
+
+.student-link { 
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
+}
+
+.student-img-container {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.student-img-container img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: var(--transition); 
+}
+
+.student-card:hover .student-img-container img { 
+    transform: scale(1.1); 
+}
+
+/* ==========================================================================
+   8. KONTAKT FORMA & FOOTER
+   ========================================================================== */
+
+.contact-form { 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.contact-form input, 
+.contact-form textarea { 
+    width: 100%; 
+    padding: 1.1rem; 
+    margin-bottom: 1.2rem; 
+    border: 1px solid var(--secondary); 
+    border-radius: 12px; 
+    font-family: inherit; 
+    outline: none; 
+    transition: 0.3s; 
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus { 
+    border-color: var(--primary); 
+    box-shadow: 0 0 0 3px rgba(65, 90, 119, 0.1); 
+}
+
+.footer { 
+    background: var(--dark); 
+    color: var(--secondary); 
+    padding: 3rem 0; 
+    text-align: center; 
+    font-weight: 500; 
+}
+
+.footer-note { 
+    font-size: 0.85rem; 
+    margin-top: 10px; 
+    color: var(--secondary); 
+}
+
+.footer-link { 
+    color: var(--links); 
+    text-decoration: none; 
+}
+
+.footer-link:hover { 
+    text-decoration: underline; 
+}
+
+/* ==========================================================================
+   9. MEDIA QUERIES (RESPONSIVE)
+   ========================================================================== */
+
+/* Tableti i manji desktop (ispod 992px) */
+@media (max-width: 992px) {
+    .cv-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-text h1 { font-size: 3rem; }
+}
+
+/* Mobiteli i tableti u portretu (ispod 768px) */
+@media (max-width: 768px) {
+    .navbar { padding: 0.8rem 0; }
+    .nav-links { display: none; } /* Sakrivanje desktop navigacije */
+    
+    .hero { padding: 4rem 0; }
+    .hero-text h1 { font-size: 2.4rem; }
+    
+    .section { padding: 4rem 0; }
+    .section-title { font-size: 1.8rem; margin-bottom: 2.5rem; }
+
+    .cv-personal-info { padding: 1.5rem; }
+    .info-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+    .cv-wrapper, .hobbies-grid { grid-template-columns: 1fr; }
+
+    .student-cards { grid-template-columns: 1fr; }
+    
+    .btn-secondary { margin-left: 0; margin-top: 10px; width: 100%; }
+    .btn-primary { width: 100%; }
+
+    /* Zoom slike na mobitelu */
+    #zoom-check:checked ~ .zoom-label img#profile-img {
+        max-width: 95vw;
+        max-height: 60vh;
+    }
+}
+
+/* Extra small devices (ispod 480px) */
+@media (max-width: 480px) {
+    .hero-text h1 { font-size: 2.2rem; }
+    .subtitle { font-size: 1rem; }
+    .card { padding: 1.2rem; }
+    .timeline { padding-left: 1.5rem; }
+}
+
+/* ==========================================================================
+   10. POMOĆNE KLASE I REFAKTORING (JS/Ostalo)
+   ========================================================================== */
+
+.icon-primary { color: var(--primary); }
+
+/* Overlay za hobi slike (Specifično za JS funkcionalnost) */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.9);
+    z-index: 9998;
+}
+
+.hobby-img.zoomed {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto; height: auto;
+    border-radius: 10px;
+    cursor: zoom-out;
+}
+
+/* Stil za linkove u hobi karticama */
+.hobby-card h3 a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition); 
+}
+
+.hobby-card h3 a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
