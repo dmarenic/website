@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dominik Marenić | Portfolio & CV</title>
-    <link rel="stylesheet" href="home.css">
+    <title>Nikola Madžarac | Portfolio & CV</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,14 +12,20 @@
 
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">Port<span>folio</span></a>
+            <a href="index.html" class="logo">Port<span>folio</span></a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#home">Početna</a></li>
-                <li><a href="#cv">Životopis</a></li>
-                <li><a href="#hobbies">Interesi</a></li>
-                <li><a href="#skills">Vještine</a></li>
-                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="student1.html">Dominik Marenić</a></li>
+                <li><a href="student2.html">Nikola Madžarac</a></li>
+                <li class="dropdown">
+                    <span class="dropbtn">Ostali studenti <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></span>
+                    <div class="dropdown-content">
+                        <a href="https://webbiography.onrender.com/" target="_blank">Matija | Luka</a>
+                        <a href="https://marj-david.github.io/" target="_blank">David | Jan</a>
+                        <a href="https://multimedija-kv-06de54.gitlab.io/" target="_blank">Viktor | Nino</a>
+                        <a href="https://mt-webprojekt.onrender.com/" target="_blank">Mislav | Dominik</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -29,12 +35,12 @@
             <div class="hero-image">
                 <input type="checkbox" id="zoom-check">
                 <label for="zoom-check" class="zoom-label">
-                    <img src="slike/IMG-20250426-WA0003.jpg" alt="Dominik Marenić" id="profile-img">
+                    <img src="slike/nm.jpg" alt="Nikola Madžarac" id="profile-img">
                 </label>
             </div>
             <div class="hero-text">
-                <h1>Dominik Marenić</h1>
-                <p class="subtitle">Student Računarstva na FERIT-u | Tech Entuzijast</p>
+                <h1>Nikola Madžarac</h1>
+                <p class="subtitle">Student Računarstva na FERIT-u</p>
                 <div class="cta-group">
                     <a href="#cv" class="btn btn-primary">Pogledaj moj CV</a>
                     <a href="#contact" class="btn btn-secondary">Kontaktiraj me</a>
@@ -54,7 +60,7 @@
                     <i class="fas fa-user"></i>
                     <div>
                         <span>Datum i mjesto rođenja</span>
-                        <p>17.11.2004., <a href="https://www.pakrac.hr/" target="_blank">Pakrac</a></p>
+                        <p>29.04.2004. <a href="https://www.grad-vinkovci.hr/hr" target="_blank">Vinkovci</a></p>
                     </div>
                 </div>
                 <div class="info-item">
@@ -68,14 +74,14 @@
                     <i class="fas fa-home"></i>
                     <div>
                         <span>Prebivalište</span>
-                        <p><a href="https://www.novska.hr/" target="_blank">Novska</a> (Kralja Zvonimira 83)</p>
+                        <p><a href="https://www.grad-vinkovci.hr/hr" target="_blank">Vinkovci</a> (Ulica Ivana Kozarca 39)</p>
                     </div>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
                         <span>Boravište</span>
-                        <p><a href="https://www.osijek.hr/" target="_blank">Osijek</a> (Vukovarska 126 C)</p>
+                        <p><a href="https://www.osijek.hr/" target="_blank">Osijek</a> (Ledine ulica 2)</p>
                     </div>
                 </div>
             </div>
@@ -91,17 +97,13 @@
                         <p>Stručni studij računarstva.</p>
                     </div>
                     <div class="timeline-item">
-                        <h4><a href="https://ss-tehnicka-kt.skole.hr/" target="_blank">Tehnička škola Kutina</a></h4>
+                        <h4><a href="https://ss-tehnicka-rboskovica-vk.skole.hr/" target="_blank">Tehnička škola Ruđera Boškovića Vinkovci</a></h4>
                         <p class="date">2019. - 2023.</p>
-                        <p>Smjer: Tehničar za računalstvo.</p>
+                        <p>Smjer: Tehničar za mehatroniku.</p>
                     </div>
                     <div class="timeline-item">
-                        <h4><a href="https://os-novska.skole.hr/" target="_blank">Osnovna škola Novska</a></h4>
+                        <h4><a href="https://os-agmatos-vk.skole.hr/" target="_blank">Osnovna škola Antun Gustav Vinkovci</a></h4>
                         <p class="date">2011. - 2019.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4><a href="https://vrtic-radost-novska.hr/" target="_blank">Dječji vrtić Radost Novska</a></h4>
-                        <p class="date">2009. - 2011.</p>
                     </div>
                 </div>
             </div>
@@ -110,18 +112,18 @@
                 <h3 class="cv-subtitle"><i class="fas fa-briefcase"></i> Radno iskustvo</h3>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <h4>Rad na obiteljskom OPG-u</h4>
-                        <p class="date">Sezonski</p>
-                        <p>Upravljanje resursima, organizacija rada i fizički poslovi na gospodarstvu.</p>
+                        <h4>Web developing</h4>
+                        <p class="date">Praksa</p>
+                        <p>Rad kao web developer u JavaScript tehnologiji i Angular framework-u u tvrtki Informatika Fortuno d.o.o. Vinkovci.</p>
                     </div>
                     <div class="timeline-item">
-                        <h4>Uslužne djelatnosti (Konobar)</h4>
+                        <h4>Uslužne djelatnosti (Konobar i servir)</h4>
                         <p class="date">Sezonski rad</p>
                         <p>Rad u dinamičnom okruženju, izravna komunikacija s gostima i timski rad.</p>
                     </div>
                     <div class="timeline-item">
-                        <h4>Član biračkog odbora</h4>
-                        <p>Provedba i nadzor izbornog procesa, rad s povjerljivom dokumentacijom.</p>
+                        <h4>Rad u skladištu BOSO</h4>
+                        <p>Rad u skladištu, označavanje proizvoda deklaracijama, organizacija robe i pridržavanje radnih procedura.</p>
                     </div>
                 </div>
             </div>
@@ -135,23 +137,35 @@
             <div class="hobbies-grid">
                 
                 <div class="card hobby-card">
-                    <h3><i class="fas fa-dumbbell icon-primary"></i> Gym</h3>
-                    <img src="slike/gym.jpg" alt="Gym" class="hobby-img">
+                    <h3><i class="fas fa-hiking icon-primary"></i> Planinarenje</h3>
+                    <div class="img-wrapper">
+                        <span class="format-badge">PNG</span>
+                        <img src="slike/planinarenje.png" alt="Gym" class="hobby-img">
+                    </div>
                 </div>
 
                 <div class="card hobby-card">
-                    <h3><i class="fas fa-futbol icon-primary"></i> Tekme</h3>
-                    <img src="slike/tekme.png" alt="Tekme" class="hobby-img">
+                    <h3><i class="fas fa-running icon-primary"></i> Trčanje</h3>
+                    <div class="img-wrapper">
+                        <span class="format-badge">JPG</span>
+                        <img src="slike/trcanje.jpg" alt="Tekme" class="hobby-img">
+                    </div>
                 </div>
 
                 <div class="card hobby-card">
-                    <h3><i class="fas fa-tv icon-primary"></i> Serije</h3>
-                    <img src="slike/dexter.bmp" alt="Serije" class="hobby-img">
+                    <h3><i class="fas fa-tv icon-primary"></i> Anime</h3>
+                    <div class="img-wrapper">
+                        <span class="format-badge">BMP</span>
+                        <img src="slike/vinsaga.bmp" alt="Serije" class="hobby-img">
+                    </div>
                 </div>
 
                 <div class="card hobby-card">
                     <h3><i class="fas fa-code icon-primary"></i> Coding</h3>
-                    <img src="slike/coding.gif" alt="Coding" class="hobby-img">
+                    <div class="img-wrapper">
+                        <span class="format-badge">GIF</span>
+                        <img src="slike/coding.gif" alt="Coding" class="hobby-img">
+                    </div>
                 </div>
 
             </div>
@@ -172,7 +186,7 @@
                 </div>
                 <div class="audio-controls-wrapper">
                     <audio controls>
-                        <source src="slike/audio-uvod.mp3" type="audio/mpeg">
+                        <source src="slike/audio-uvod1.mp3" type="audio/mpeg">
                         Vaš preglednik ne podržava audio element.
                     </audio>
                 </div>
@@ -182,14 +196,14 @@
 
     <section class="video-showcase section">
         <div class="container">
-            <h2 class="section-title">Video predstavljanje grada Novska</h2>
+            <h2 class="section-title">Video predstavljanje grada Vinkovci</h2>
             <div class="video-container card">
                 <video controls poster="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200">
-                    <source src="slike/video1.mp4" type="video/mp4">
+                    <source src="slike/vinkovcivideo.mp4" type="video/mp4">
                     Vaš preglednik ne podržava video element.
                 </video>
                 <div class="video-caption">
-                    <p><i class="fas fa-play-circle"></i> Kratki video o gradu Novska.</p>
+                    <p><i class="fas fa-play-circle"></i> Kratki video o gradu Vinkovci.</p>
                 </div>
             </div>
         </div>
@@ -209,13 +223,22 @@
                         <span>HTML/CSS</span>
                         <div class="progress-bar"><div class="progress p-65"></div></div>
                     </div>
+                    <div class="skill-item">
+                        <span>Python</span>
+                        <div class="progress-bar"><div class="progress p-45"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>JS i PHP</span>
+                        <div class="progress-bar"><div class="progress p-35"></div></div>
+                    </div>
                 </div>
                 <div class="skill-category">
                     <h3>Osobne vještine</h3>
                     <ul class="soft-skills-list">
-                        <li><i class="fas fa-check-circle"></i> Izrazita radna etika</li>
+                        <li><i class="fas fa-check-circle"></i> Volja za rad</li>
                         <li><i class="fas fa-check-circle"></i> Timski igrač</li>
                         <li><i class="fas fa-check-circle"></i> Visoka prilagodljivost</li>
+                        <li><i class="fas fa-check-circle"></i> Komunikativan</li>
                     </ul>
                 </div>
             </div>
@@ -237,8 +260,12 @@
     <footer class="footer">
         <div class="container">
             <p class="footer-note">
+                Fakultet elektrotehnike, računarstva i informacijskih tehnologija Osijek
+            </p>
+            
+            <p class="footer-note">
                 Ova web stranica izrađena je u sklopu kolegija 
-                <a href="#" class="footer-link">Multimedijska tehnika</a> na FERIT-u.
+                <a href="https://moodle.srce.hr/2025-2026/course/view.php?id=233933" target="_blank" class="footer-link">Multimedijska tehnika</a> na <a href="https://www.ferit.unios.hr/" target="_blank" class="footer-link">FERIT Osijek</a>.
             </p>
         </div>
     </footer>
